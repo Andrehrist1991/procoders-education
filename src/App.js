@@ -1,6 +1,6 @@
 // Modules
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Redirect, Route } from "react-router-dom";
 
 // Components
 import Header from "./Components/Header";
@@ -18,18 +18,16 @@ function App() {
       <Router>
         <Header/>
         <Switch>
-          {/* <Route exact path="/">
-            <Home />
-          </Route> */}
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/news">
+          <Route exact path="/news">
             <NewsPage />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <ProfilePage />
           </Route>
+          <Redirect from='/' to='/login'/>
         </Switch>
       </Router>
     </div>

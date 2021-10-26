@@ -3,9 +3,11 @@ import React from "react";
 
 function NewsPage(props) {
     return (
-        <>
-           News
-        </>
+        <div className="app-page">
+            <div className="container">
+                News
+            </div>
+        </div>
     )
 }
 

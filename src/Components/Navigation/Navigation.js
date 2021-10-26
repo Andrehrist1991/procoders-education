@@ -14,24 +14,25 @@ import {
   } from 'reactstrap';
 
 // Styles
+import s from "./Navigation.module.scss";
 
 function Navigation(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
     return (
-        <Navbar color="light" light expand="md">
+        <Navbar className={s.headerNav} color="light" light expand="md">
             <NavbarBrand href="/">Education task</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
-                <Nav className="mr-auto" navbar>
-                    <NavItem>
+                <Nav className={`${s.menuList} "mr-auto"`} navbar>
+                    <NavItem className={s.menuItem}>
                         <Link to="/login">Логин</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className={s.menuItem}>
                         <Link to="/news">Новости</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className={s.menuItem}>
                         <Link to="/profile">Профиль</Link>
                     </NavItem>
                 </Nav>

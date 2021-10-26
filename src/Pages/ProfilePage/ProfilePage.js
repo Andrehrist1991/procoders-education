@@ -3,9 +3,11 @@ import React from "react";
 
 function ProfilePage(props) {
     return (
-        <>
-           Profile
-        </>
+        <div className="app-page">
+            <div className="container">
+                Profile
+            </div>
+        </div>
     )
 }
 
